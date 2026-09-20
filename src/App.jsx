@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./App.css";
 import List from "./components/List";
 import SerieListForm from "./components/SerieListForm";
 import Header from "./components/Header";

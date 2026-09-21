@@ -11,6 +11,7 @@ Webbapp för att hålla koll på serier. Lägg till, markera som sedd, ladda upp
 - **React med Vite** 
 - **Komponentuppdelning** (formulär, lista, serie) med state och API-logik i `App.jsx`.
 - **Felhantering** misslyckade API anrop visar felmeddelande istället för att krascha.
+- **Bilder** sparas i `wwwroot/uploads/` med GUID-namn.
 
 ## Komma igång
 Backend måste köra först (se backend-repot).

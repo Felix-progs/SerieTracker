@@ -1,6 +1,6 @@
 # SerieTracker – Frontend
 
-Webbapp för att hålla koll på serier. Lägg till, markera som sedd och ta bort. Byggd i React, kommunicerar med SerieTracker-backendens API.
+Webbapp för att hålla koll på serier. Lägg till, markera som sedd, ladda upp bild och ta bort serie. Byggd i React, kommunicerar med SerieTracker-backendens API.
 
 ## Teknik
 - React (Vite)

@@ -56,6 +56,25 @@ function handleDelete(id) {
       })
       .catch((error) => console.error("Kunde inte uppdatera:", error));
   }
+  function handleImageUpload(serieId, file) {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  fetch(`http://localhost:5172/api/serie/${serieId}/image`, {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Uppladdning misslyckades");
+      return response.json();
+    })
+    .then((data) => {
+      setSeries(series.map((s) =>
+        s.id === serieId ? { ...s, imageUrl: data.imageUrl } : s
+      ));
+    })
+    .catch((error) => console.error("Kunde inte ladda upp bild:", error));
+} 
   
 
   return (
@@ -63,7 +82,11 @@ function handleDelete(id) {
       <Header />
       <SerieListForm onAdd={handleAdd} />
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <List series={series} onToggleSeen={handleToggleSeen} onDelete={handleDelete} />
+      <List 
+      series={series} 
+      onToggleSeen={handleToggleSeen} 
+      onDelete={handleDelete} 
+      onImageUpload={handleImageUpload} />  
       <Footer />
     </div>
   );
